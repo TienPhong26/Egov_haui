@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mẫu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            max-width: 100%;
+            height: 50%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-actions button:hover {
+            background-color: #0056b3;
+        }
+        .form-actions input[type="file"] {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Vào Sổ Văn Bản Đến</h2>
+        <form>
+            <div class="form-group">
+                <label for="so-cong-van">Số công văn đến (*)</label>
+                <input type="number" id="so-cong-van" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ngay-den">Ngày đến (*)</label>
+                <input type="date" id="ngay-den" required>
+            </div>
+
+            <div class="form-group">
+                <label for="so-hieu">Số hiệu (*)</label>
+                <input type="text" id="so-hieu" required>
+            </div>
+
+            <div class="form-group">
+                <label for="don-vi-gui">Đơn vị gửi (*)</label>
+                <input type="text" id="don-vi-gui" required>
+            </div>
+
+            <div class="form-group">
+                <label for="trich-yeu">Trích yếu (*)</label>
+                <textarea id="trich-yeu" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="loai-van-ban">Loại văn bản (*)</label>
+                <select id="loai-van-ban" required>
+                    <option value="">---Chọn---</option>
+                    <option value="thong-bao">Thông báo</option>
+                    <option value="cong-van">Công văn</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="linh-vuc">Lĩnh vực (*)</label>
+                <select id="linh-vuc" required>
+                    <option value="">---Chọn---</option>
+                    <option value="giao-duc">Giáo dục</option>
+                    <option value="y-te">Y tế</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ngay-van-ban">Ngày văn bản (*)</label>
+                <input type="date" id="ngay-van-ban" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nguoi-ky">Người ký (*)</label>
+                <input type="text" id="nguoi-ky" required>
+            </div>
+
+            <div class="form-group">
+                <label for="do-khan">Độ khẩn (*)</label>
+                <select id="do-khan" required>
+                    <option value="thuong">Thường</option>
+                    <option value="khan">Khẩn</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="do-mat">Độ mật (*)</label>
+                <select id="do-mat" required>
+                    <option value="thuong">Thường</option>
+                    <option value="mat">Mật</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ngon-ngu">Ngôn ngữ (*)</label>
+                <select id="ngon-ngu" required>
+                    <option value="tieng-viet">Tiếng Việt</option>
+                    <option value="tieng-anh">Tiếng Anh</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="so-trang">Số trang (*)</label>
+                <input type="number" id="so-trang" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ghi-chu">Ghi chú</label>
+                <textarea id="ghi-chu"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="file-dinh-kem">File văn bản (PDF)</label>
+                <input type="file" id="file-dinh-kem" accept=".pdf">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Lưu thông tin</button>
+                <label>
+                    <input type="checkbox" id="cho-phep-tai-van-ban">
+                    Cho phép tải văn bản
+                </label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

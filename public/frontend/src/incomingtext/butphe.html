@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Approval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4a261;
+            color: #fff;
+        }
+
+        td {
+            background-color: #f9f5ef;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .filter-bar select,
+        .filter-bar input,
+        .filter-bar button {
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .tags {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .overdue {
+            color: red;
+        }
+
+        .action-icons {
+            text-align: center;
+        }
+
+        .action-icons span {
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 18px;
+        }
+
+        .action-icons span:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Văn bản chờ phê duyệt</h1>
+
+        <div class="filter-bar">
+            <div>
+                <select>
+                    <option>---Chọn---</option>
+                </select>
+                <input type="text" placeholder="Trích yếu">
+            </div>
+            <div>
+                <button>Chọn lọc</button>
+                <input type="text" placeholder="Tìm kiếm">
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ngày đến</th>
+                    <th>Nơi ban hành</th>
+                    <th>Số đến</th>
+                    <th>Số ký hiệu</th>
+                    <th>Ngày VB</th>
+                    <th>Trích yếu</th>
+                    <th>Hạn xử lý</th>
+                    <th>Đính kèm</th>
+                    <th>Ghi chú</th>
+                    <th>Bút phê</th>
+                    <th>Giao đơn vị</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>19/12/2024</td>
+                    <td>Bộ Công Thương</td>
+                    <td>1874</td>
+                    <td>10356/BCT-VP</td>
+                    <td>18/12/2024</td>
+                    <td>
+                        <span class="tags">Tổng hợp</span><br>
+                        Mời dự Hội nghị Tổng kết công tác năm 2024 và triển khai nhiệm vụ năm 2025 ngành Công Thương
+                    </td>
+                    <td class="overdue">23/12/2024 (Quá hạn)</td>
+                    <td>File 1</td>
+                    <td></td>
+                    <td class="action-icons">
+                        <span>&#9998;</span>
+                    </td>
+                    <td class="action-icons">
+                        <span>&#128257;</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>11/12/2024</td>
+                    <td>BCS Đảng Bộ Công Thương</td>
+                    <td>1815</td>
+                    <td>161-GM/BCSĐ</td>
+                    <td>09/12/2024</td>
+                    <td>
+                        <span class="tags">Tổ chức cán bộ</span><br>
+                        Tổng kết Nghị quyết 18-NQ/TW ngày 25/10/2017 của Ban chấp hành Trung ương Đảng khóa XII "Một số vấn đề về tiếp tục đổi mới, sắp xếp tổ chức bộ máy của hệ thống chính trị tinh gọn, hoạt động hiệu lực, hiệu quả"
+                    </td>
+                    <td class="overdue">16/12/2024 (Quá hạn)</td>
+                    <td>File 1</td>
+                    <td></td>
+                    <td class="action-icons">
+                        <span>&#9998;</span>
+                    </td>
+                    <td class="action-icons">
+                        <span>&#128257;</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

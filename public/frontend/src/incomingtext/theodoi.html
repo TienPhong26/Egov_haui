@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Processing List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .filter-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filter-section input,
+    .filter-section select,
+    .filter-section button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .filter-section button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+    }
+
+    .status-tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    .status-normal {
+      background-color: #d9edf7;
+      color: #31708f;
+    }
+
+    .status-urgent {
+      background-color: #f2dede;
+      color: #a94442;
+    }
+
+    .status-default {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+
+    .action-menu {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .pagination {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .pagination span {
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .pagination span.active {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Danh sách văn bản chờ xử lý</h1>
+
+    <div class="filter-section">
+      <input type="text" placeholder="Số">
+      <input type="text" placeholder="Năm">
+      <input type="text" placeholder="Số văn bản">
+      <input type="text" placeholder="Trích yếu">
+      <input type="date">
+      <button>Chọn lọc</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Số đến</th>
+          <th>Số ký hiệu</th>
+          <th>Trích yếu</th>
+          <th>Hạn xử lý</th>
+          <th>Đính kèm</th>
+          <th>Nội dung lãnh đạo</th>
+          <th>Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>1873 - 19/12/2024</td>
+          <td>4017/QĐ-BGDĐT - 18/12/2024</td>
+          <td>
+            <span class="status-tag status-default">Đào tạo</span><br>
+            Kiểm tra công tác chuẩn bị, tổ chức coi thi Kỳ thi chọn học sinh giỏi quốc gia 
+            trung học phổ thông năm học 2024 - 2025 tại 68 Hội đồng coi thi
+          </td>
+          <td>24/12/2024 <span class="status-tag status-urgent">(Quá hạn)</span></td>
+          <td>File 1</td>
+          <td>.</td>
+          <td>Chưa xử lý</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <span class="active">1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+  </div>
+
+  <script>
+    // Add any JavaScript logic here if needed
+    console.log('Page loaded');
+  </script>
+</body>
+</html>

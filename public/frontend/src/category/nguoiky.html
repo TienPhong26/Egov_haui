@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người ký</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table thead {
+            background-color: #1E3A8A;
+            color: white;
+        }
+
+        table th, table td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .actions button {
+            background-color: #3B82F6;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .actions button:hover {
+            background-color: #2563EB;
+        }
+
+        .add-btn {
+            background-color: #10B981;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .add-btn:hover {
+            background-color: #059669;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .pagination button.active {
+            background-color: #1E3A8A;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Người ký</h1>
+
+        <div>
+            <label for="records">Số bản ghi hiển thị trên 1 trang</label>
+            <select id="records">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+
+            <input type="text" id="search" placeholder="Tìm kiếm...">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tên</th>
+                    <th>Tạo bởi</th>
+                    <th>Cập nhật lần cuối bởi</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Thường</td>
+                    <td>Quản trị hệ thống<br>22/11/2013 00:00:00</td>
+                    <td>22/11/2013 00:00:00</td>
+                    <td class="actions">
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mật</td>
+                    <td>Quản trị hệ thống<br>22/11/2013 00:00:00</td>
+                    <td>22/11/2013 00:00:00</td>
+                    <td class="actions">
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tuyệt mật</td>
+                    <td>Quản trị hệ thống<br>22/11/2013 00:00:00</td>
+                    <td>22/11/2013 00:00:00</td>
+                    <td class="actions">
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Tối mật</td>
+                    <td>Quản trị hệ thống<br>22/11/2013 00:00:00</td>
+                    <td>22/11/2013 00:00:00</td>
+                    <td class="actions">
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Tối tuyệt mật</td>
+                    <td>Quản trị hệ thống<br>22/11/2013 00:00:00</td>
+                    <td>26/11/2013 00:00:00</td>
+                    <td class="actions">
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="add-btn">+ Thêm mới</button>
+
+        <div class="pagination">
+            <button>Trước</button>
+            <button class="active">1</button>
+            <button>Tiếp</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('search').addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('table tbody tr');
+
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

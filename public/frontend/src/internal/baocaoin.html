@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Văn Bản Đi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .filter-bar input,
+        .filter-bar select,
+        .filter-bar button {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .filter-bar input {
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .filter-bar select {
+            max-width: 150px;
+        }
+
+        .filter-bar button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .filter-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        .filter-bar .btn-green {
+            background-color: #28a745;
+        }
+
+        .filter-bar .btn-green:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #003366;
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            color: #333;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Báo cáo văn bản đi</h1>
+        <div class="filter-bar">
+            <input type="text" placeholder="Nội dung">
+            <input type="text" placeholder="Năm" value="2025">
+            <select>
+                <option>---Chọn---</option>
+                <option>Loại 1</option>
+                <option>Loại 2</option>
+            </select>
+            <input type="text" placeholder="Từ ngày" onfocus="(this.type='date')" onblur="(this.type='text')">
+            <input type="text" placeholder="Đến ngày" onfocus="(this.type='date')" onblur="(this.type='text')">
+            <button>Chọn lọc</button>
+            <button class="btn-green">Sổ VB đi</button>
+            <input type="text" placeholder="Tìm kiếm" style="flex: 1; max-width: 300px;">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>SỐ HIỆU</th>
+                    <th>NGÀY KÝ</th>
+                    <th>NGÀY VB</th>
+                    <th>ĐÍNH KÈM</th>
+                    <th>TRÍCH YẾU</th>
+                    <th>NƠI NHẬN</th>
+                    <th>NGƯỜI KÝ</th>
+                    <th>LƯU TRỮ</th>
+                    <th>SỐ BẢN</th>
+                    <th>GHI CHÚ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="no-data">
+                    <td colspan="11">Không có dữ liệu.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button>Trước</button>
+            <button>Tiếp</button>
+        </div>
+    </div>
+</body>
+</html>

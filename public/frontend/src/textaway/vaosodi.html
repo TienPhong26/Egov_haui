@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý văn bản</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group.required label::after {
+      content: " (*)";
+      color: red;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-group.half {
+      flex: 1 1 calc(50% - 20px);
+    }
+
+    .form-group.third {
+      flex: 1 1 calc(33.33% - 20px);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .file-input {
+      display: flex;
+      align-items: center;
+    }
+
+    .file-input input[type="file"] {
+      margin-right: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quản lý văn bản</h1>
+    <p class="breadcrumb">Quản lý văn bản đi - Vào sổ văn bản đi</p>
+    <form id="documentForm">
+      <!-- Row 1: Loại văn bản, Số ký hiệu, Ngày văn bản -->
+      <div class="form-row">
+        <div class="form-group required third">
+          <label for="documentType">Loại văn bản</label>
+          <select id="documentType" required>
+            <option value="">---Chọn---</option>
+            <option value="1">Loại 1</option>
+            <option value="2">Loại 2</option>
+          </select>
+        </div>
+        <div class="form-group required third">
+          <label for="documentNumber">Số ký hiệu</label>
+          <input type="text" id="documentNumber" placeholder="Nhập số ký hiệu" required>
+        </div>
+        <div class="form-group required third">
+          <label for="documentDate">Ngày văn bản</label>
+          <input type="date" id="documentDate" required>
+        </div>
+      </div>
+
+      <!-- Row 2: Đơn vị soạn thảo, Lĩnh vực -->
+      <div class="form-row">
+        <div class="form-group required half">
+          <label for="draftUnit">Đơn vị soạn thảo</label>
+          <select id="draftUnit" required>
+            <option value="">---Chọn---</option>
+            <option value="1">Đơn vị 1</option>
+            <option value="2">Đơn vị 2</option>
+          </select>
+        </div>
+        <div class="form-group required half">
+          <label for="field">Lĩnh vực</label>
+          <select id="field" required>
+            <option value="">---Chọn---</option>
+            <option value="1">Lĩnh vực 1</option>
+            <option value="2">Lĩnh vực 2</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 3: Độ mật, Độ khẩn -->
+      <div class="form-row">
+        <div class="form-group required half">
+          <label for="securityLevel">Độ mật</label>
+          <select id="securityLevel" required>
+            <option value="Normal">Thường</option>
+            <option value="Confidential">Mật</option>
+          </select>
+        </div>
+        <div class="form-group required half">
+          <label for="urgencyLevel">Độ khẩn</label>
+          <select id="urgencyLevel" required>
+            <option value="Normal">Thường</option>
+            <option value="Urgent">Khẩn</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 4: Người ký, Ngày ký -->
+      <div class="form-row">
+        <div class="form-group required half">
+          <label for="signer">Người ký</label>
+          <select id="signer" required>
+            <option value="">---Chọn---</option>
+            <option value="1">Người 1</option>
+            <option value="2">Người 2</option>
+          </select>
+        </div>
+        <div class="form-group required half">
+          <label for="signDate">Ngày ký</label>
+          <input type="date" id="signDate" required>
+        </div>
+      </div>
+
+      <!-- Row 5: Trích yếu -->
+      <div class="form-group">
+        <label for="shortDescription">Trích yếu</label>
+        <textarea id="shortDescription" rows="3"></textarea>
+      </div>
+
+      <!-- Row 6: Nơi nhận, Ghi chú -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="recipient">Nơi nhận</label>
+          <input type="text" id="recipient" placeholder="Nhập nơi nhận">
+        </div>
+        <div class="form-group half">
+          <label for="notes">Ghi chú</label>
+          <textarea id="notes" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Row 7: File đính kèm -->
+      <div class="form-group">
+        <label for="file">File đính kèm</label>
+        <div class="file-input">
+          <input type="file" id="file">
+          <span>Không có tệp nào được chọn</span>
+        </div>
+      </div>
+
+      <!-- Row 8: Lưu trữ, Số bản -->
+      <div class="form-row">
+        <div class="form-group required half">
+          <label for="storage">Lưu trữ</label>
+          <input type="text" id="storage" value="VT" required>
+        </div>
+        <div class="form-group required half">
+          <label for="copies">Số bản</label>
+          <input type="number" id="copies" value="5" required>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <div class="button-container">
+        <button type="submit">LƯU THÔNG TIN</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("documentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Form submitted successfully!");
+    });
+  </script>
+</body>
+</html>
